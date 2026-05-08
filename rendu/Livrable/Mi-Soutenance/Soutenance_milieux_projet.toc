@@ -1,0 +1,5 @@
+\babel@toc {french}{}\relax 
+\beamer@sectionintoc {1}{Présentation du projet}{3}{0}{1}
+\beamer@sectionintoc {2}{Avancement du projet}{7}{0}{2}
+\beamer@sectionintoc {3}{Futur du projet}{10}{0}{3}
+\beamer@sectionintoc {4}{Sources}{11}{0}{4}

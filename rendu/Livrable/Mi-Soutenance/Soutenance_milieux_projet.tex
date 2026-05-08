@@ -1,0 +1,150 @@
+\documentclass[10pt]{beamer}
+\setbeamertemplate{navigation symbols}{\insertframenumber}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+
+\usepackage{graphicx}
+\usepackage{enotez}
+
+\usepackage{verbatim}
+\usepackage{amsmath}
+\usepackage{array,multirow,makecell}
+
+\usepackage{listings}
+\usepackage{xcolor}
+
+\usepackage{hyperref}
+
+\definecolor{codegreen}{named}{green}
+\definecolor{codered}{named}{red}
+\definecolor{codeblue}{named}{blue}
+\definecolor{codeblack}{named}{black}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{codeblue},
+    numberstyle=\tiny\color{codeblack},
+    stringstyle=\color{codered},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=2pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=1
+}
+
+\lstset{style=mystyle}
+\usepackage[linesnumbered,ruled,french,onelanguage]{algorithm2e}
+
+\makeatletter
+\g@addto@macro{\@algocf@init}{\SetKwInput{KwOut}{Sortie}}
+\makeatother
+
+\author{Thomas Matthieu, Tellier Basile, Marie Vianney, Siaghi Massinissa}
+\date{\today}
+\title{Analyse des algorithmes de tri}
+\usetheme{Warsaw}
+
+\setlength{\algomargin}{1em}
+\begin{document}
+
+\begin{frame}
+\maketitle
+\end{frame}
+
+\begin{frame}
+\frametitle{Table des matières}
+\tableofcontents
+\end{frame}
+
+\section{Présentation du projet}
+\begin{frame}
+Objectif du projet :
+  \begin{itemize}
+      \item <1-> Générateur de données 
+      \begin{itemize}
+        \item Génération de listes
+        \item Gestion du désordre
+      \end{itemize}   
+      \item <2-> Algorithmes de tri 
+      \begin{itemize}
+        \item Merge Sort
+        \item Counting Sort
+        \item Insertion Sort
+        \item Bubble Sort 
+        \item Quick Sort 
+      \end{itemize}
+      \item <3-> Analyse des résultats
+        \begin{itemize}
+          \item Comparaison des algorithmes 
+          \item Différences en fonction du pourcentage de désordre 
+          \item Différences en fonction du type de désordre 
+        \end{itemize}
+      \item <4-> Démonstration d'un algorithme de tri
+        \begin{itemize}
+          \item Démontrer le fonctionnement d'un algorithme 
+          \item Comparer les différences de fonctionnement
+        \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\section{Avancement du projet}
+\begin{frame}
+Avancement actuel du projet :
+  \begin{itemize}
+    \item <1-> Générateur de données 
+      \begin{itemize}
+        \item Création d’un tableau trié 
+        \item Mélange en fonction de la méthode de désordre sélectionnée 
+        \item Renvoi d’un tableau mélangé  
+      \end{itemize}
+    \item <2-> Algorithmes de tri 
+        \begin{itemize}
+          \item Implémentation des algorithmes via une classe \texttt{AbstractSort}
+          \item Utilisation de sondes pour récupérer le nombre d’accès / swaps / comparaisons
+        \end{itemize}
+    \item <3-> Analyse des résultats
+      \begin{itemize}
+        \item Affichage simple des résultats en terminal sans comparaison poussée
+      \end{itemize}
+    \item <3-> Expérimentation
+      \begin{itemize}
+        \item Utilisation d’un script shell pour lancer le processus 
+        \item Export des données dans un fichier CSV
+      \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\section{Futur du projet}
+\begin{frame}
+Objectifs pour la suite du projet :
+  \begin{itemize}
+    \item Interface graphique 
+    \begin{itemize}
+      \item Visualisation du fonctionnement des algorithmes 
+      \item Analyse des performances
+    \end{itemize}
+    \item Analyse des CSV
+    \item Comparaison suivant différents paramètres
+    \item Classement général ou avancé
+    \item Utilisation d'une graine de génération pour les tableaux
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+\section{Sources}
+  Algorithmes de tri : \url{https://www.geeksforgeeks.org/dsa/sorting-algorithms/}
+  \newline
+  \url{https://www.youtube.com/watch?v=kPRA0W1kECg}
+\end{frame}
+
+\end{document}

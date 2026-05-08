@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="sorting" default="run" basedir=".">
+
+    <property name="app.name"      value="sorting"/>
+    <property name="app.version"   value="0.1"/>
+    <property name="app.fullname"  value="${app.name}-${app.version}"/>
+
+    <property name="build.home"    value="${basedir}/build"/>
+    <property name="dist.home"     value="${basedir}/dist"/>
+    <property name="src.home"      value="${basedir}/src"/>
+    <property name="docs.home"     value="${basedir}/docs"/>
+
+    <property name="main.class"    value="modele.Main"/>
+    <property name="javac.encoding" value="UTF-8"/>
+
+    <!-- ═══════════════ Targets ═══════════════════════════════════════════ -->
+
+    <target name="all" depends="clean, compile, javadoc"
+        description="Nettoie, recompile et génère la Javadoc"/>
+
+    <target name="clean" description="Supprime les répertoires build et dist">
+        <delete dir="${build.home}"/>
+        <delete dir="${dist.home}"/>
+    </target>
+
+    <target name="prepare">
+        <mkdir dir="${build.home}"/>
+        <mkdir dir="${dist.home}"/>
+    </target>
+
+    <target name="compile" depends="prepare" description="Compile les sources Java">
+        <javac srcdir="${src.home}"
+               destdir="${build.home}"
+               encoding="${javac.encoding}"
+               debug="true"
+               deprecation="false"
+               optimize="true"
+               includeantruntime="false"/>
+        <copy todir="${build.home}">
+            <fileset dir="${src.home}" excludes="**/*.java"/>
+        </copy>
+    </target>
+
+    <target name="run" depends="compile, javadoc" description="Lance l'application">
+    <java classname="${main.class}" classpath="${build.home}" fork="true"/>
+    </target>
+
+    <target name="javadoc" depends="compile" description="Génère la Javadoc">
+        <mkdir dir="${dist.home}/docs/api"/>
+        <javadoc sourcepath="${src.home}"
+                 destdir="${dist.home}/docs/api"
+                 packagenames="*"
+                 encoding="${javac.encoding}"
+                 windowtitle="Sorting Visualizer API"/>
+    </target>
+
+    <target name="dist" depends="clean, compile, javadoc"
+            description="Crée le JAR de distribution">
+        <jar jarfile="${dist.home}/${app.fullname}.jar" basedir="${build.home}">
+            <manifest>
+                <attribute name="Main-Class" value="${main.class}"/>
+            </manifest>
+        </jar>
+    </target>
+
+</project>
