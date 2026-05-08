@@ -14,21 +14,24 @@ Quick Sort, Merge Sort et Counting Sort. Chaque algorithme est instrumenté
 pour mesurer comparaisons, accès mémoire, échanges et temps d'exécution.
 
 ## Structure
-``text
+```bash
 projet/
 ├── build.xml
-├── src/                  — code source Java
+├── src/
+│   └── code source Java
 ├── experimentation/
 │   ├── experimentation.sh
-│   └── resultats/        — fichiers CSV par taille
-└── dist/                 — généré par ant (Javadoc, JAR)
+│   └── resultats/
+│       └── fichiers CSV par taille
+└── dist/
+    └── généré par ant (Javadoc, JAR)
 ```
 ## Prérequis
-``text
+
 Java 17+
 Apache Ant
 Python3
-``` 
+
 ## Interface graphique
 
 L'application affiche le tableau sous forme de barres verticales mises à jour
