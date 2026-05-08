@@ -1,5 +1,5 @@
 Analyse des algorithmes de tri
-Conception Logicielle 3 — Université de Caen Normandie
+Conception Logicielle 3 - Université de Caen Normandie
 
 Thomas Matthieu · Marie Vianney · Siaghi Massinissa · Tellier Basile
 
@@ -13,7 +13,7 @@ et analyse. Cinq algorithmes sont étudiés : Bubble Sort, Insertion Sort,
 Quick Sort, Merge Sort et Counting Sort. Chaque algorithme est instrumenté
 pour mesurer comparaisons, accès mémoire, échanges et temps d'exécution.
 
-Structure
+## Structure
 projet/
 ├── build.xml
 ├── src/                  — code source Java
